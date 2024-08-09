@@ -9,6 +9,7 @@ class Navbar extends React.Component {
     super(props);
     this.state = {
       searchText: "",
+      isSearching: false,
     };
   }
 
@@ -19,12 +20,18 @@ class Navbar extends React.Component {
   handleSearch = () => {
     const { searchText } = this.state;
     this.props.dispatch(handleMovieSearch(searchText));
+    this.setState({ isSearching: false });
   };
 
   handleChange = (e) => {
     this.setState({
       searchText: e.target.value,
+      isSearching: true,
     });
+    //Making Debounce calls to reduce api calls.
+    if (!this.state.isSearching) {
+      setTimeout(this.handleSearch, 500);
+    }
   };
 
   render() {
@@ -33,7 +40,7 @@ class Navbar extends React.Component {
     return (
       <div className="nav">
         <div className="search-container">
-          <input onChange={this.handleChange}></input>
+          <input onKeyUp={this.handleChange}></input>
           <button id="search-btn" onClick={this.handleSearch}>
             Search
           </button>
