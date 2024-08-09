@@ -1,6 +1,5 @@
 <h1>Movie App</h1>
 
-the Movie app is a react-based web application. It contains some preloaded movie names. If a user wants to add more movies he/she can search in the search bar and add to the movies list or If a user wants to favorite a movie he/she can do so by clicking on favorite. Overall the web application is user-friendly and intuitive to understand what each section is for.
+The Movie App is a React-based web application designed to manage a dynamic list of movies. The app comes with a preloaded set of movie names, allowing users to expand the list by searching for additional titles through a search bar and adding them to the collection. The app also supports marking movies as favorites, providing a user-friendly interface for managing personal movie preferences.
 
-
-I made this app extensively for learning Context and how redux is used in react.
+This project was developed with a focus on mastering state management in React, particularly through the use of Context API and Redux.
